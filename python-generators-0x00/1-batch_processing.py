@@ -20,7 +20,6 @@ def stream_users_in_batches(batch_size):
   conn.close()
 
 def batch_processing(batch_size):
-    """Yield users over age 25 from streamed batches"""
     for batch in stream_users_in_batches(batch_size):  # loop 1
         for user in batch:  # loop 2
             if int(user["age"]) > 25:
